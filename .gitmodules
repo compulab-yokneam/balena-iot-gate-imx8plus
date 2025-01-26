@@ -33,7 +33,7 @@
 [submodule "layers/meta-imx"]
 	path = layers/meta-imx
 	url = https://github.com/nxp-imx/meta-imx.git
-	branch = kirkstone-5.15.32-2.0.0
+	branch = kirkstone-5.15.71-2.2.2
 [submodule "layers/meta-balena-hab"]
 	path = layers/meta-balena-hab
 	url = git@github.com:balena-os/meta-balena-hab.git
