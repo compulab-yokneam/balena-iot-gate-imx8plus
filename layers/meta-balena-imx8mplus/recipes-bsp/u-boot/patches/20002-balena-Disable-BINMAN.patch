@@ -1,0 +1,36 @@
+From 04534413efa56947971e325534ab450512dada16 Mon Sep 17 00:00:00 2001
+From: Valentin Raevsky <valentin@compulab.co.il>
+Date: Sat, 13 Jul 2024 12:49:44 +0300
+Subject: [PATCH] balena: Disable BINMAN
+
+Signed-off-by: Valentin Raevsky <valentin@compulab.co.il>
+
+%% original patch: 20002-balena-Disable-BINMAN.patch
+
+Signed-off-by: Valentin Raevsky <valentin@compulab.co.il>
+---
+ board/compulab/plat/Kconfig | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/board/compulab/plat/Kconfig b/board/compulab/plat/Kconfig
+index 3a27600347..ef72efd74a 100644
+--- a/board/compulab/plat/Kconfig
++++ b/board/compulab/plat/Kconfig
+@@ -43,14 +43,12 @@ config TARGET_SOM_IMX8M_PLUS
+ config TARGET_IOT_GATE_IMX8PLUS
+ 	bool "CompuLab iot-gate-imx8plus"
+ 	select IMX8MP
+-	select BINMAN
+ 	select SUPPORT_SPL
+ 	select IMX8M_LPDDR4
+ 
+ config TARGET_IOTDIN_IMX8P
+ 	bool "CompuLab iotdin-imx8p"
+ 	select IMX8MP
+-	select BINMAN
+ 	select SUPPORT_SPL
+ 	select IMX8M_LPDDR4
+ endchoice
+-- 
+2.34.1
+
