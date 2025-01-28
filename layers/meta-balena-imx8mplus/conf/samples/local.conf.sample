@@ -1,5 +1,5 @@
 # Supported machines
-#MACHINE ?= "iot-gate-imx8"
+MACHINE ?= "iot-gate-imx8plus"
 
 # We use the overlayfs docker storage driver
 BALENA_STORAGE = "overlay2"
