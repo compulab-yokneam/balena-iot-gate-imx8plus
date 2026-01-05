@@ -1,0 +1,38 @@
+From ce748ccdd80b4f09371b68e2e8d0a0172473d7fc Mon Sep 17 00:00:00 2001
+From: Valentin Raevsky <valentin@compulab.co.il>
+Date: Mon, 5 Jan 2026 09:25:42 +0200
+Subject: [PATCH] compulab: dts: sb-iotgimx8plus: Fix the ethernet phy reset
+ location
+
+Signed-off-by: Valentin Raevsky <valentin@compulab.co.il>
+---
+ arch/arm64/boot/dts/compulab/sb-iotgimx8plus.dtsi | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/compulab/sb-iotgimx8plus.dtsi b/arch/arm64/boot/dts/compulab/sb-iotgimx8plus.dtsi
+index 626bec53227d..19261b90282a 100644
+--- a/arch/arm64/boot/dts/compulab/sb-iotgimx8plus.dtsi
++++ b/arch/arm64/boot/dts/compulab/sb-iotgimx8plus.dtsi
+@@ -98,6 +98,9 @@ &fec {
+ 	phy-mode = "rgmii-id";
+ 	phy-handle = <&fecphy>;
+ 	fsl,magic-packet;
++	reset-gpios = <&gpio4 24 GPIO_ACTIVE_LOW>;
++	reset-assert-us = <10000>;
++	reset-deassert-us = <80000>;
+ 	status = "okay";
+ 
+ 	mdio {
+@@ -107,9 +110,6 @@ mdio {
+ 		fecphy: fec-phy@0 {
+ 			compatible = "ethernet-phy-ieee802.3-c22";
+ 			reg = <0>;
+-			reset-gpios = <&gpio4 24 GPIO_ACTIVE_LOW>;
+-			reset-assert-us = <10000>;
+-			reset-deassert-us = <80000>;
+ 			eee-broken-1000t;
+ 			realtek,clkout-disable;
+ 		};
+-- 
+2.34.1
+
